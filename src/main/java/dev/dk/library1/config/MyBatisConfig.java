@@ -1,5 +1,6 @@
 package dev.dk.library1.config;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -12,10 +13,11 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import javax.sql.DataSource;
+//import javax.sql.DataSource;
+import javax.sql.*;
 
 @Configuration
-public class MybatisConfig {
+public class MyBatisConfig {
 
     @Autowired
     @Qualifier("dataSource")
@@ -29,15 +31,19 @@ public class MybatisConfig {
 
 
         sessionFactory.setDataSource(dataSource);
+
         //맵퍼 xml 파일 경로 설정
         Resource[] res = new PathMatchingResourcePatternResolver()
                 .getResources("classpath*:/dev/dk/library1/*Mapper.xml");
+
         sessionFactory.setMapperLocations(res);
+
         return sessionFactory.getObject();
     }
 
     @Bean
     public SqlSession sqlSession() throws Exception {
+
         return new SqlSessionTemplate(sqlSessionFactoryBean());
     }
 }

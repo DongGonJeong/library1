@@ -1,5 +1,6 @@
 package dev.dk.library1.config;
 
+
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -21,7 +22,5 @@ public class DataSourceConfig {
     @Primary
     @ConfigurationProperties("spring.datasource.hikari")
     public DataSource dataSource(){return DataSourceBuilder.create().type(HikariDataSource.class).build();}
-
-
 
 }
