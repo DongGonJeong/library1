@@ -32,13 +32,9 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
 	compileOnly 'org.projectlombok:lombok'
-
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-
 	annotationProcessor 'org.projectlombok:lombok'
-
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }

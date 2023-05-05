@@ -8,7 +8,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="dev.dk.library1.mapper.libraryMapper">
+<mapper namespace="dev.dk.library1.Mapper.LibraryMapper">
+
+    <select id="getText" resultType="String">
+
+        SELECT 'hello mapper'
+
+    </select>
 
 
 </mapper>

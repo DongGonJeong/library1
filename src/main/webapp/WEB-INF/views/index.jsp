@@ -10,6 +10,8 @@
 <head>
     <title>Hello</title>
 
+    ${view_text}
+
     hello
 </head>
 <body>
